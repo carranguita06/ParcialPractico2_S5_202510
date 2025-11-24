@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule,provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { IngredienteModule } from './ingrediente/ingrediente.module';
+import { RecetaModule } from './receta/receta.module';
+
+import { provideHttpClient, withInterceptorsFromDi, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,9 +15,14 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IngredienteModule,
+    RecetaModule,
+
   ],
-  providers: [],
+  providers: [
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(withInterceptorsFromDi(), withFetch())],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,15 @@
+img {
+ height: 200px;
+ width: auto;
+ max-width: 200px;
+}
+
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #f9f9f9;
+  position: relative;
+}

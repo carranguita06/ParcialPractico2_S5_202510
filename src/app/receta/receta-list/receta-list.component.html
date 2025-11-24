@@ -1,0 +1,32 @@
+
+<div class="card">
+      <div class="card-body">
+      <h1 class=" card-title">Receta</h1>
+  @for (receta of recetas; track receta.id) {
+    <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Calorias totales: {{receta.caloriasTotales}} </h5>
+                {{receta.ingredientes}}
+                @if (receta.ingredientes.length === 0) {
+            <div class="no-ingredientes">
+              <p class="text-muted">No hay ingredientes en la receta. ¡Agrega algunos!</p>
+            </div>
+          } @else {
+            @for (ingrediente of receta.ingredientes; track ingrediente.id) {
+              <div class="ingrediente-item">
+                <div class="ingrediente-info">
+                  <strong>{{ingrediente.nombre}}</strong>
+                  <div class="ingrediente-details">
+                    <span>Cantidad: {{ingrediente.cantidad}}</span>
+                  </div>
+                </div>
+              </div>
+            }
+            }
+          </div>
+    </div>
+  }
+                  </div>
+                </div>
+
+

@@ -1,0 +1,34 @@
+    <div class="card">
+      <div class="card-body">
+      <h1 class=" card-title">Ingredientes</h1>
+
+        @for (ingrediente of ingredientes; track ingrediente.id ) {
+            <div class="card">
+              <table>
+              <td> <img
+                    class="ingrediente-img"
+                    [src]="ingrediente.imagen"
+                    alt="{{ingrediente.imagen}}"></td>
+              <td>
+              <div class="card-body">
+                <h5 class="card-title">{{ ingrediente.nombre }}</h5>
+                <p class="card-text">{{ ingrediente.descripcion }}</p>
+
+                < ! --button
+                    class="btn-primary"
+                    < (click)="agregarIngredienteAReceta(ingrediente)">
+                    Agregar
+
+                  </div>
+                </td>
+                </table>
+              </div>
+
+    }
+      </div>
+    </div>
+
+
+
+
+
